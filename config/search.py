@@ -6,16 +6,15 @@ Copyright (C) 2024 Sai Vignesh Golla
 
 License:    GNU Affero General Public License
             https://www.gnu.org/licenses/agpl-3.0.en.html
-            
+
 GitHub:     https://github.com/GodsScion/Auto_job_applier_linkedIn
 
 version:    26.01.20.5.08
 '''
 
-
 ###################################################### LINKEDIN SEARCH PREFERENCES ######################################################
 
-# Search terms ordered by priority: telehealth first, then locums, then short-term/contract
+# Priority order: telehealth/virtual > locums > short-term/contract > clinical AI (bonus track)
 search_terms = [
     "Telehealth Family Medicine Physician",
     "Telemedicine Physician",
@@ -26,35 +25,31 @@ search_terms = [
     "Locum Tenens Physician Washington",
     "Locum Family Physician",
     "Family Medicine Physician Washington",
-    "Primary Care Physician Remote",
     "Contract Family Medicine Physician",
-    "Urgent Care Physician Washington"
+    "Primary Care Physician Remote",
+    "Urgent Care Physician Washington",
+    "Physician Clinical AI",
+    "Medical Director Telehealth"
 ]
 
-# Washington state — covers telehealth based in WA and locum positions in WA
 search_location = "Washington, United States"
 
-# After how many applications per search term should the bot switch to next?
-switch_number = 20                 # Keep lower so all search terms get coverage
+switch_number = 20
 
-# Randomize search order?
 randomize_search_order = False     # False = priority order above
 
+sort_by = "Most recent"
+date_posted = "Past week"
+salary = "$200,000+"               # Highest LinkedIn bracket; locums hourly not captured here
 
-# >>>>>>>>>>> Job Search Filters <<<<<<<<<<<
+easy_apply_only = True
 
-sort_by = "Most recent"            # "Most recent", "Most relevant" or ""
-date_posted = "Past week"          # "Any time", "Past month", "Past week", "Past 24 hours"
-salary = "$200,000+"               # Closest LinkedIn bracket to physician compensation
+experience_level = ["Associate", "Mid-Senior level"]
+job_type = ["Full-time", "Contract", "Temporary"]
+on_site = ["Remote", "On-site", "Hybrid"]  # Remote=telehealth, On-site=locums
 
-easy_apply_only = True             # True or False
-
-experience_level = ["Associate", "Mid-Senior level"]   # 1-3 years post-residency
-job_type = ["Full-time", "Contract", "Temporary"]       # Covers perm, locums, and short-term
-on_site = ["Remote", "On-site", "Hybrid"]               # Remote for telehealth, on-site for locums
-
-companies = []                     # Leave open — don't restrict to specific employers
-location = []                      # Covered by search_location above
+companies = []
+location = []
 industry = []
 job_function = []
 job_titles = []
@@ -65,34 +60,25 @@ under_10_applicants = False
 in_your_network = False
 fair_chance_employer = False
 
+pause_after_filters = True
 
-## >>>>>>>>>>> RELATED SETTING <<<<<<<<<<<
-pause_after_filters = True         # Pause to review results before applying
-
-
-## >>>>>>>>>>> SKIP IRRELEVANT JOBS <<<<<<<<<<<
-
-# Skip staffing companies that post generic listings without real jobs
 about_company_bad_words = []
-
 about_company_good_words = []
 
-# Skip jobs clearly not for physicians
+# Filter out non-physician roles and irrelevant positions
 bad_words = [
     "Nurse Practitioner", "NP only", "Physician Assistant", "PA only",
-    "CRNA", "Registered Nurse", "RN required",
-    "Veterinarian", "Dentist", "Pharmacist",
-    "Software Engineer", "Developer", "Data Scientist",
-    "Security Clearance", "US Citizen required"
+    "CRNA", "Registered Nurse", "RN required", "LCSW", "Therapist only",
+    "Veterinarian", "Dentist", "Pharmacist", "Optometrist",
+    "Software Engineer", "Data Scientist", "Developer",
+    "Security Clearance required", "Must be US Citizen"
 ]
 
 security_clearance = False
 
-# MD = doctorate level; did_masters = True helps with experience-gating logic
-did_masters = True
+did_masters = True                 # MD counts; helps bot pass experience gates
 
-# 1-3 years post-residency; set to 2 as midpoint. Bot skips jobs requiring > current_experience + 2
-current_experience = 2
-
+# Residency July 2022–June 2025 + Sankofa Sept 2025–present = ~4 years clinical
+current_experience = 4
 
 ############################################################################################################
