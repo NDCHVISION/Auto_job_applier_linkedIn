@@ -6,40 +6,30 @@ Copyright (C) 2024 Sai Vignesh Golla
 
 License:    GNU Affero General Public License
             https://www.gnu.org/licenses/agpl-3.0.en.html
-            
+
 GitHub:     https://github.com/GodsScion/Auto_job_applier_linkedIn
 
 version:    2024.11.28.16.00
 '''
 
-
 ###################################################### CONFIGURE YOUR TOOLS HERE ######################################################
 
+first_name = "Yaw"
+middle_name = "Adabor"
+last_name = "Nkrumah"
 
-# >>>>>>>>>>> Easy Apply Questions & Inputs <<<<<<<<<<<
+phone_number = "8036836664"
 
-# Your legal name
-first_name = "Yaw"                 # Your first name in quotes
-middle_name = "A."                 # Your middle initial
-last_name = "Nkrumah"             # Your last name
+current_city = "Spokane"
 
-# Phone number (required), make sure it's valid.
-phone_number = "ENTER_YOUR_10_DIGIT_NUMBER"   # Enter your 10 digit number in quotes Eg: "2065551234"
-
-# What is your current city?
-current_city = "Seattle"           # Update to your actual city in Washington state
-
-# Address
-street = "123 Main Street"         # Update with your address
+street = "123 Main Street"         # Update with your actual address if needed
 state = "WA"
-zipcode = "98101"                  # Update with your zip code
+zipcode = "99201"
 country = "United States"
 
-## US Equal Opportunity questions
-ethnicity = "Decline"              # "Decline", "Hispanic/Latino", "American Indian or Alaska Native", "Asian", "Black or African American", "Native Hawaiian or Other Pacific Islander", "White", "Other"
-gender = "Decline"                 # "Male", "Female", "Other", "Decline" or ""
-disability_status = "Decline"      # "Yes", "No", "Decline"
-veteran_status = "Decline"         # "Yes", "No", "Decline"
-
+ethnicity = "Decline"
+gender = "Decline"
+disability_status = "Decline"
+veteran_status = "Decline"
 
 ############################################################################################################
